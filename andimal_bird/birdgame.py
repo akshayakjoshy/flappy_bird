@@ -42,22 +42,7 @@ textoption3 = option_font3.render('NIDHII', True, 'black')
 #load images
 bg=pygame.image.load("/Users/mikmin/Desktop/birdgame/andimal_bird/flappy bird wallpaper.jpeg")
 #charca
-class Character:
-    def __init__(self, image):
-        self.image = image
-        self.x = 150
-        self.y = 300
-        self.velocity = 0
 
-    def jump(self):
-        self.velocity = -8
-
-    def move(self):
-        self.velocity += 0.5   # gravity
-        self.y += self.velocity
-
-    def draw(self):
-        screen.blit(self.image, (self.x, self.y))
 
 def draw_text_outline(font, text, text_color, outline_color, center_x, center_y):
     text_surface = font.render(text, True, text_color)
