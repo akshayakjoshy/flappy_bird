@@ -29,16 +29,35 @@ option3=pygame.image.load("/Users/mikmin/Desktop/birdgame/andimal_bird/option bu
 screen2=pygame.image.load("/Users/mikmin/Desktop/birdgame/andimal_bird/flappy bird wallpaper.jpeg")
 character1=pygame.image.load("/Users/mikmin/Desktop/birdgame/andimal_bird/character1.png")
 character2=pygame.image.load("/Users/mikmin/Desktop/birdgame/andimal_bird/character2.png")
+character3=pygame.image.load("/Users/mikmin/Desktop/birdgame/andimal_bird/character3.png")
 
 option_font1 = pygame.font.Font('/Users/mikmin/Desktop/birdgame/andimal_bird/ByteBounce copy.ttf',25)
 option_font2 = pygame.font.Font('/Users/mikmin/Desktop/birdgame/andimal_bird/ByteBounce copy.ttf',25)
 option_font3 = pygame.font.Font('/Users/mikmin/Desktop/birdgame/andimal_bird/ByteBounce copy.ttf',25)
 textoption1 = option_font1.render('RIZZ GAWDD', True, 'black')
 textoption2 = option_font2.render('SHAWARMAA', True, 'black')
-textoption3 = option_font3.render('PULINGOOO ', True, 'black')
+textoption3 = option_font3.render('NIDHII', True, 'black')
+
 
 #load images
 bg=pygame.image.load("/Users/mikmin/Desktop/birdgame/andimal_bird/flappy bird wallpaper.jpeg")
+#charca
+class Character:
+    def __init__(self, image):
+        self.image = image
+        self.x = 150
+        self.y = 300
+        self.velocity = 0
+
+    def jump(self):
+        self.velocity = -8
+
+    def move(self):
+        self.velocity += 0.5   # gravity
+        self.y += self.velocity
+
+    def draw(self):
+        screen.blit(self.image, (self.x, self.y))
 
 def draw_text_outline(font, text, text_color, outline_color, center_x, center_y):
     text_surface = font.render(text, True, text_color)
@@ -67,11 +86,13 @@ def draw():
     )
 
 def gamestart():
-    screen.fill('white')
+    screen.fill('BLUE')
     game_font=pygame.font.Font('/Users/mikmin/Desktop/birdgame/andimal_bird/FlappyBirdRegular-9Pq0.ttf',40)
+    screen3=pygame.image.load("/Users/mikmin/Desktop/birdgame/andimal_bird/flappy bird wallpaper.jpeg")
+    screen.blit(screen3,(0,0))
     draw_text_outline(
         game_font,
-        'GAME START',
+        'POII PADIKK PILAREE',
         SCORE_COLOR,
         (0, 0, 0),
         180,
@@ -89,6 +110,7 @@ def chose_character():
     screen.blit(textoption2,(100,310))   
     screen.blit(option3,(50,300))  
     screen.blit(textoption3,(100,360))
+    screen.blit(character3,(229,350))
 
     draw_text_outline(
         text_font,
