@@ -1,5 +1,6 @@
 import pygame
 from pygame.locals import *
+import cflap
 from cflap import Bird, Pipe, Game
 
 
@@ -154,7 +155,12 @@ while True :
         char_map = {1: character1, 2: character2, 3: character3}
         game = Game(screen, clock, bg, char_map[games1])
         game.run()
-        current_screen = 'start'
+        pygame.time.delay(1000)
+        screen.fill(SKY_BLUE)  # Clear screen with sky blue
+        
+        current_screen = 'start'  # Reset to start after game ends
+        #code to go back to the 1st screen after the game ends  
+
     
     pygame.display.update()
     clock.tick(60)

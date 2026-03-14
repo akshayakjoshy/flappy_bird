@@ -135,6 +135,7 @@ class Game:
 
     def draw(self):
         self.screen.blit(self.bg, (0, 0))
+        c="ok"
 
         for pipe in self.pipes:
             pipe.draw(self.screen)
@@ -149,6 +150,8 @@ class Game:
         if self.state == 'dead':
             msg = self.font.render('GAME OVER ', True, (200, 0, 0))
             self.screen.blit(msg, (50, 280))
+            
+            
 
     def reset(self):
         self.bird.reset()
@@ -158,7 +161,7 @@ class Game:
         self.state = 'playing'
 
     def run(self):
-        while True:
+        while self.state != "dead":
             self.handle_events()
             self.update()
             self.draw()
