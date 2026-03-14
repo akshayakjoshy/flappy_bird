@@ -123,8 +123,11 @@ while True :
         if event.type == pygame.MOUSEBUTTONDOWN:
             mouse_pos = pygame.mouse.get_pos()
             # Define rects once (e.g., in init)
-            
-            if current_screen == 'next':
+            if current_screen == 'start':
+                if 105 <= mouse_pos[0] <= 255 and 290 <= mouse_pos[1] <= 340:
+                    print('Start button clicked ')
+                    current_screen = 'next'
+            elif current_screen == 'next':
             # In event loop
                 if option1_rect.collidepoint(mouse_pos):
                     ans, games1 = "a", 1
@@ -155,8 +158,8 @@ while True :
         char_map = {1: character1, 2: character2, 3: character3}
         game = Game(screen, clock, bg, char_map[games1])
         game.run()
-        pygame.time.delay(1000)
-        screen.fill(SKY_BLUE)  # Clear screen with sky blue
+        pygame.time.delay(500)
+        
         
         current_screen = 'start'  # Reset to start after game ends
         #code to go back to the 1st screen after the game ends  
