@@ -21,7 +21,7 @@ The game is developed using Object-Oriented Programming (OOP) principles, with s
 - Object-Oriented Programming (OOP)
 
 ### 🎮 How to Play
-- Press **Space** or **Click** to make the character jump
+- **Click** to make the character jump
 - Avoid hitting the pipes
 - Try to achieve the highest score!
 
